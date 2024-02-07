@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./pokemon.js" defer></script>
 </head>
 <body>
     <main class="main">
@@ -27,7 +28,7 @@
                             <p class="body2-fonte">Filtrar por:</p>
                             <div class="filtrar">
                                 <div>
-                                    <input type="radio" name="filtro" id="numero" value="number" checked>
+                                    <input type="radio" name="filtro" id="number" value="number" checked>
                                     <label for="number" class="body3-fonts">Número</label>
                                 </div>
                                 <div>
@@ -40,6 +41,12 @@
                 </div>
             </div>
         </header>
+        <section class="lista-pokemons">
+            <div class="container">
+                <div class="caixa-lista"></div>
+            </div>
+            <div id="nao-encontrado-mensagem">Pokemon não encontrado</div>
+        </section>
     </main>
 </body>
 </html>
