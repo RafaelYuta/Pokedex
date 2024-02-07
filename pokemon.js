@@ -1,4 +1,4 @@
-const MAX_POKEMON = 649
+const MAX_POKEMON = 151
 const caixaLista = document.querySelector(".caixa-lista");
 const pesquisaInput = document.querySelector("#pesquisa-input");
 const numeroFiltro = document.querySelector("#number");
