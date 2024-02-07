@@ -83,3 +83,12 @@ function handleSearch(){
         naoEncontradoMensagem.style.display = "none";
     }
 }
+
+const fecharBotao = document.querySelector(".icone-pesquisa-fechar");
+fecharBotao.addEventListener("click", apagarPesquisa);
+
+function apagarPesquisa() {
+    pesquisaInput.value = "";
+    mostrarPokemon(allPokemons)
+    naoEncontradoMensagem.style.display = "none"
+}
