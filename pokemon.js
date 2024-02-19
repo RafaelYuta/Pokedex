@@ -1,4 +1,4 @@
-const MAX_POKEMON = 151
+const MAX_POKEMON = 649
 const caixaLista = document.querySelector(".caixa-lista");
 const pesquisaInput = document.querySelector("#pesquisa-input");
 const numeroFiltro = document.querySelector("#number");
@@ -16,11 +16,15 @@ fetch(`https://pokeapi.co/api/v2/pokemon?limit=${MAX_POKEMON}`)
 
 async function fetchPokemonDataBeforeRedirect(id){
     try{
-        const [pokemon, pokemonSpecies] = await Promise
-        .all([fetch(`https://pokeapi.co/api/v2/pokemon/${id}}`).then((res) => res.json()),
-        fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}}`).then((res) => res.json())
+        const [pokemon, pokemonSpecies] = await Promise.all([
+            fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then((res) => 
+            res.json()
+            ),
+            fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`).then((res) => 
+            res.json()
+        )
     ])
-        return true
+    return true
     } catch (error){
         console.error("Falhou em pegar data dos Pokemons antes do Redirect")
     }
@@ -48,7 +52,7 @@ function mostrarPokemon (pokemon){
         ItemLista.addEventListener("click", async () => {
             const sucesso = await fetchPokemonDataBeforeRedirect(pokemonId);
             if (sucesso){
-                window.location.href = `.detail.html?id=${pokemonId}`;
+                window.location.href = `detail.html?id=${pokemonId}`;
             }
         });
 
